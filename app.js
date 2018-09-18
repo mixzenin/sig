@@ -70,7 +70,11 @@ app.get('/utxo', (req, res) => {
 app.get('/gettx', (req, res) => {
     if (msigTx) {
         let transaction = new bitcore.Transaction(msigTx);
-        res.send({tx: transaction.toObject(), msig: msigAddress});
+        const response = {
+            tx: transaction.toObject(), 
+            msig: msigAddress
+        }
+        res.send(response);
     } else {
         res.send({tx: false});
     }
@@ -84,7 +88,6 @@ app.get('/getpubkey', async (req, res) => {
         pubKeys.push(USER3_PUBKEY);
         msigAddress = createMsig();
         msigTx = await createMsigTx();
-        console.log(msigTx.toString());
     }
     res.send({status: true});
 });
