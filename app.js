@@ -40,7 +40,7 @@ app.get('/create', (req, res) => {
 });
 
 app.get('/tx', async (req, res) => {
-    msigTx = await createMsigTx();
+    msigTx = await createMsigTx();  
     if (msigTx == undefined){
         console.log("Balance null");
         res.send({result: 'Balance null'});
@@ -87,7 +87,6 @@ app.get('/getpubkey', async (req, res) => {
     if (pubKeys.length == 2) {
         pubKeys.push(USER3_PUBKEY);
         msigAddress = createMsig();
-        msigTx = await createMsigTx();
     }
     res.send({status: true});
 });
