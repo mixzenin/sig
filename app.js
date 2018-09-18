@@ -118,6 +118,7 @@ let createMsigTx = () => {
             if (utxos == undefined) {
                 reejct("Balance null");
             }
+            console.log(utxos);
             msigTx.from(utxos, pubKeys, REQUIRED_SIGNATURES)
                 .to(USER1, 50000)
                 .change(msigAddress);
