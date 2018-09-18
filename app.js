@@ -86,6 +86,7 @@ app.get('/getpubkey', async (req, res) => {
         msigTx = await createMsigTx();
         console.log(msigTx.toString());
     }
+    res.send({status: true});
 });
 
 app.get('/issigner', (req, res) => {
