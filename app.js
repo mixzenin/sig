@@ -70,7 +70,7 @@ app.get('/utxo', (req, res) => {
 app.get('/gettx', (req, res) => {
     if (msigTx) {
         let transaction = new bitcore.Transaction(msigTx);
-        res.send({tx: transaction.toObject()});
+        res.send({tx: transaction.toObject(), msig: msigAddress});
     } else {
         res.send({tx: false});
     }
