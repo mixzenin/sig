@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+    <script src="dist/build.js"></script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><input type="button" value="MSIG" onclick="sig.createMsig()"></td>
+            <td><input type="button" value="CREATE TX" onclick="sig.createTx()"></td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td><input type="text" value="mq9zoRB1cCw7W42am6eNoxpefRemxPPnAo" id="address" disabled></td>
+        </tr>
+        <tr>
+            <td>Tx</td>
+            <td><input type="text" id="tx" placeholder="Тут будет транзакция" disabled></td>
+            <td><input type="button" value="SIGN" id="sign"></td>
+        </tr>
+    </table>
+   
+</body>
+</html>
